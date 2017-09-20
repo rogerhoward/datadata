@@ -4,6 +4,14 @@
 
 const { ipcRenderer, remote, shell } = require('electron');
 const { dialog } = remote;
+
+const { spawn } = require('child_process');
+
+var fs = require("fs"),
+    path = require("path");
+
+// const ls = 
+
 // const setApplicationMenu = require('./menu');
 
 // const form = document.querySelector('form');
@@ -15,41 +23,45 @@ const { dialog } = remote;
 //     // fps: form.querySelector('input[name="fps"]'),
 // };
 
+function walk(dir, callback) {
+    fs.readdir(dir, function(err, files) {
+        if (err) throw err;
+        files.forEach(function(file) {
+            var filepath = path.join(dir, file);
+            fs.stat(filepath, function(err,stats) {
+                if (stats.isDirectory()) {
+                    walk(filepath, callback);
+                } else if (stats.isFile()) {
+                    callback(filepath, stats);
+                }
+            });
+        });
+    });
+}
+
+function handleFile(path, stats) {
+    console.log(path, stats);
+}
 
 const buttons = {
     source: document.getElementById('chooseSource'),
 };
 
-// ipcRenderer.on('did-finish-load', () => {
-//     setApplicationMenu();
-// });
 
-// ipcRenderer.on('processing-did-succeed', (event, html) => {
-//     shell.openExternal(`file://${html}`);
-// });
-
-// ipcRenderer.on('processing-did-fail', (event, error) => {
-//     console.error(error);
-//     alert('Failed :\'(');
-// });
 
 buttons.source.addEventListener('click', () => {
     const directory = dialog.showOpenDialog({
         properties: ['openDirectory'],
-    });
+    })[0];
+
+    console.log(directory);
+
     if (directory) {
         // inputs.source.value = directory;
-        alert(directory);
+        // alert(directory);
+
+        walk(directory, handleFile);
+
+
     }
 });
-
-
-// form.addEventListener('submit', (event) => {
-//     event.preventDefault();
-//     ipcRenderer.send('did-submit-form', {
-//         source: inputs.source.value,
-//         destination: inputs.destination.value,
-//         name: inputs.name.value,
-//         fps: inputs.fps.value,
-//     });
-// });
