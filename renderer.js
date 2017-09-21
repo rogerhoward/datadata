@@ -11,6 +11,19 @@ var fs = require("fs"),
 const { spawn, spawnSync } = require('child_process');
 
 
+function syncMetadata(source, destination) {
+    // source = destination.replace('.DNG', '.JPG')
+    // command = `/usr/local/bin/exiftool -tagsfromfile "${source}" -exif:all "${destination}"`
+
+
+    if ((fs.existsSync(source)) && (fs.existsSync(destination))) {
+        // Do something
+        const ls = spawnSync('/usr/local/bin/exiftool', ["-tagsfromfile", source, "-exif:all", destination]);
+        console.log(ls.output.toString());
+
+    }
+
+}
 
 function walk(dir, callback) {
     fs.readdir(dir, function(err, files) {
@@ -30,11 +43,20 @@ function walk(dir, callback) {
 
 
 function handleFile(path, stats) {
-    console.log(path, stats);
+    // console.log(path, stats);
 
-    const ls = spawnSync('cat', [path]);
+    // const ls = spawnSync('cat', [path]);
 
-    console.log(ls.output.toString());
+    // console.log(ls.output.toString());
+
+    if (path.endsWith('.DNG')) {
+        pathTwin = path.replace('.DNG', '.JPG');
+
+        if (fs.existsSync(pathTwin)) {
+            syncMetadata(pathTwin, path)
+        }
+
+    }
 
 }
 
