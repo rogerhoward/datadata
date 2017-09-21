@@ -5,23 +5,12 @@
 const { ipcRenderer, remote, shell } = require('electron');
 const { dialog } = remote;
 
-const { spawn } = require('child_process');
-
 var fs = require("fs"),
     path = require("path");
 
-// const ls = 
+const { spawn, spawnSync } = require('child_process');
 
-// const setApplicationMenu = require('./menu');
 
-// const form = document.querySelector('form');
-
-// const inputs = {
-//     source: form.querySelector('button[name="source"]'),
-//     // destination: form.querySelector('input[name="destination"]'),
-//     // name: form.querySelector('input[name="name"]'),
-//     // fps: form.querySelector('input[name="fps"]'),
-// };
 
 function walk(dir, callback) {
     fs.readdir(dir, function(err, files) {
@@ -39,14 +28,20 @@ function walk(dir, callback) {
     });
 }
 
+
 function handleFile(path, stats) {
     console.log(path, stats);
+
+    const ls = spawnSync('cat', [path]);
+
+    console.log(ls.output.toString());
+
 }
+
 
 const buttons = {
     source: document.getElementById('chooseSource'),
 };
-
 
 
 buttons.source.addEventListener('click', () => {
@@ -54,14 +49,8 @@ buttons.source.addEventListener('click', () => {
         properties: ['openDirectory'],
     })[0];
 
-    console.log(directory);
-
     if (directory) {
-        // inputs.source.value = directory;
-        // alert(directory);
-
         walk(directory, handleFile);
-
-
     }
+
 });
