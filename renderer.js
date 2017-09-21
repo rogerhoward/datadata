@@ -8,6 +8,8 @@ var fs = require("fs"),
     path = require("path"),
     os = require("os");
 
+var assets = [];
+
 const { spawn, spawnSync } = require('child_process');
 
 if (os.platform() === 'win32') {
@@ -19,20 +21,16 @@ if (os.platform() === 'win32') {
 
 
 function syncMetadata(source, destination) {
-    // source = destination.replace('.DNG', '.JPG')
-    // command = `/usr/local/bin/exiftool -tagsfromfile "${source}" -exif:all "${destination}"`
-
-
     if ((fs.existsSync(source)) && (fs.existsSync(destination))) {
-        // Do something
         const ls = spawnSync(exifPath, ["-tagsfromfile", source, "-exif:all", destination]);
         console.log(ls.output.toString());
 
     }
-
 }
 
+
 function walk(dir, callback) {
+
     fs.readdir(dir, function(err, files) {
         if (err) throw err;
         files.forEach(function(file) {
@@ -48,6 +46,12 @@ function walk(dir, callback) {
     });
 }
 
+// function syncAssets() {
+//     for (asset of assets) {
+//         console.log(asset);
+//     }
+// }
+
 
 function handleFile(path, stats) {
     // console.log(path, stats);
@@ -60,7 +64,8 @@ function handleFile(path, stats) {
         pathTwin = path.replace('.DNG', '.JPG');
 
         if (fs.existsSync(pathTwin)) {
-            syncMetadata(pathTwin, path)
+            assets.push({source:pathTwin, destination: path})
+            // syncMetadata(pathTwin, path)
         }
 
     }
@@ -74,12 +79,27 @@ const buttons = {
 
 
 buttons.source.addEventListener('click', () => {
+
     const directory = dialog.showOpenDialog({
         properties: ['openDirectory'],
     })[0];
 
     if (directory) {
+        assets = [];
         walk(directory, handleFile);
+        console.log(assets, assets.length);
+
+        // console.log('assets are populated', assets.length);
+        // // for (let asset of assets) {
+        // //     console.log(asset);
+        // // }
+
+        // assets.forEach(function(item){
+        //     console.log('hello');
+        // });
+        
+
     }
+
 
 });
