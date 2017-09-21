@@ -4,11 +4,18 @@
 
 const { ipcRenderer, remote, shell } = require('electron');
 const { dialog } = remote;
-
 var fs = require("fs"),
-    path = require("path");
+    path = require("path"),
+    os = require("os");
 
 const { spawn, spawnSync } = require('child_process');
+
+if (os.platform() === 'win32') {
+    var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe')
+} else {
+    var exifPath = path.join(__dirname, 'bin/osx/exiftool')
+}
+
 
 
 function syncMetadata(source, destination) {
@@ -18,7 +25,7 @@ function syncMetadata(source, destination) {
 
     if ((fs.existsSync(source)) && (fs.existsSync(destination))) {
         // Do something
-        const ls = spawnSync('/usr/local/bin/exiftool', ["-tagsfromfile", source, "-exif:all", destination]);
+        const ls = spawnSync(exifPath, ["-tagsfromfile", source, "-exif:all", destination]);
         console.log(ls.output.toString());
 
     }
