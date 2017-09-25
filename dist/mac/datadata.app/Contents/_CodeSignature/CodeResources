@@ -10,7 +10,7 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		d2ylwgMbphtJ5bKSIOwoj67G314=
+		MbNqobFHiJlh+mOPfqtHc/e9b0Y=
 		</data>
 		<key>Resources/bin/osx/Changes</key>
 		<data>
@@ -3522,7 +3522,7 @@
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.dylib</key>
 		<data>
-		wKwQl3+Id6avtY7khozlTo/FBRE=
+		XQwHgjnJrMuvJLdJnbJs7zrgFeU=
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>
 		<data>
@@ -4063,7 +4063,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			gmqCz02Hduf5Hdl0LfRKwbYT6kM=
+			1LwXtZ8Z8ZQGNgpHs6f1GfBOH7k=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -4090,7 +4090,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			KQhEtE9cxFM9m8vHcT29uW9g8hM=
+			Bz8un8uE6ao8aNE74OLgrHnHMZA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.Squirrel" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -4137,11 +4137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d2ylwgMbphtJ5bKSIOwoj67G314=
+			MbNqobFHiJlh+mOPfqtHc/e9b0Y=
 			</data>
 			<key>hash2</key>
 			<data>
-			DkGhmx9gdTRK1RWCYSCug6bASdRBvls/Cz6TCoZKVC0=
+			k2mHg8cIaEtyHtoo4lnu5cOkOxnmDMyTnWHDIIbn25s=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/Changes</key>
@@ -13795,11 +13795,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			wKwQl3+Id6avtY7khozlTo/FBRE=
+			XQwHgjnJrMuvJLdJnbJs7zrgFeU=
 			</data>
 			<key>hash2</key>
 			<data>
-			4Lt42CxC8Cj2Eee5xnbaak6Vd3EF2sOLJ2cA0f0Fdfs=
+			ZhVQd4gtU1dh8cXw9tzEE3OHOoCX47DsL+oTm6SeNO0=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>

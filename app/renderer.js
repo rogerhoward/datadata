@@ -4,29 +4,30 @@
 
 const { ipcRenderer, remote, shell } = require('electron');
 const { dialog } = remote;
+const { spawn, spawnSync } = require('child_process');
+
 var fs = require("fs"),
     path = require("path"),
-    os = require("os");
-var walkSync = require('walk-sync');
+    os = require("os"),
+    walkSync = require('walk-sync');
 
 var thisCollection;
 
-const { spawn, spawnSync } = require('child_process');
 
 if (os.platform() === 'win32') {
     var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe');
-    var pathDelim = "";
+    var pathDelim = "\\";
 } else {
     var exifPath = path.join(__dirname, '../bin/osx/exiftool');
     var pathDelim = "/";
 }
+
 
 class Asset {
     constructor(source, destination) {
         updateStatus("Adding new Asset, source: " + source + ", destination: " + destination);
         this.source = source;
         this.destination = destination;
-        // this.sync();
     }
 
     sync() {
@@ -106,7 +107,6 @@ function resetProgress() {
           .css("width", value + "%")
           .attr("aria-valuenow", value)
           .text("Ready.");
-
 }
 
 
@@ -145,7 +145,6 @@ function getSource() {
 
 
 
-
 document.getElementById('chooseSourceBtn').addEventListener('click', () => {
     getSource();
 });
@@ -154,23 +153,4 @@ document.getElementById('chooseSourceBtn').addEventListener('click', () => {
 document.getElementById('syncBtn').addEventListener('click', () => {
     thisCollection.sync();
 });
-
-
-
-// getElementById('chooseSourceImg').addEventListener('click', () => {
-//     getSource();
-// });
-
-
-// $('#chooseSourceImg').on({
-//     'mouseover' : function() {
-//       $(this).attr('src','assets/Icon-Mouseover.png');
-//     },
-//     'mousedown' : function() {
-//       $(this).attr('src','assets/Icon-Pressed.png');
-//     },
-//     mouseout : function() {
-//   $(this).attr('src','assets/Icon.png');
-//     }
-//   });
 
