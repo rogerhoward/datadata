@@ -17,7 +17,7 @@ if (os.platform() === 'win32') {
     var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe');
     var pathDelim = "";
 } else {
-    var exifPath = path.join(__dirname, 'bin/osx/exiftool');
+    var exifPath = path.join(__dirname, '../bin/osx/exiftool');
     var pathDelim = "/";
 }
 

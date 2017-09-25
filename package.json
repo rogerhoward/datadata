@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Copies metadata from JPEGs to DNGs with the same base name.",
   "repository": "rogerhoward/datadata",
+  "author": "Roger Howard",
   "main": "app/app.js",
   "scripts": {
     "start": "electron app/app.js",
@@ -12,33 +13,38 @@
   },
   "license": "ISC",
   "build": {
-  "appId": "datadata",
-  "category": "utilities.photo",
-  "dmg": {
-    "contents": [
-      {
-        "x": 110,
-        "y": 150
-      },
-      {
-        "x": 240,
-        "y": 150,
-        "type": "link",
-        "path": "/Applications"
-      }
-    ]
+    "appId": "datadata",
+    "files":[
+      "**/*"
+    ],
+    "extraResources": [
+      "bin"
+    ],
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "squirrel",
+      "icon": "build/icon.ico"
+    }
   },
-  "linux": {
-    "target": [
-      "AppImage",
-      "deb"
-    ]
-  },
-  "win": {
-    "target": "squirrel",
-    "icon": "build/icon.ico"
-  }
-},
   "dependencies": {
     "walk-sync": "^0.3.2"
   },
