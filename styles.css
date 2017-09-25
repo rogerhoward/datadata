@@ -1,5 +1,5 @@
 html, body, .container-fluid {
-  background-color: #D6D8DC;
+  background-color: #ffffff;
 }
 
 .text-input {
@@ -16,4 +16,29 @@ html, body, .container-fluid {
 .hash-heading {
   color: #575B5E;
   font-weight: normal;
+}
+
+
+#status {
+	border: 1px dotted #888888;
+	margin-top: 10px;
+	height: 60px;
+	max-height: 60px;
+	padding: 4px;
+	overflow: scroll;
+	font-size: 0.8em;
+  display: none;
+}
+
+#syncBtn {
+  display: none;
+}
+
+
+#progress-container {
+  margin-top: 20px;
+}
+
+.navbar-btn {
+  margin-left: 10px;
 }

@@ -7,99 +7,176 @@ const { dialog } = remote;
 var fs = require("fs"),
     path = require("path"),
     os = require("os");
+var walkSync = require('walk-sync');
 
-var assets = [];
+var thisCollection;
 
 const { spawn, spawnSync } = require('child_process');
 
 if (os.platform() === 'win32') {
-    var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe')
+    var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe');
+    var pathDelim = "";
 } else {
-    var exifPath = path.join(__dirname, 'bin/osx/exiftool')
+    var exifPath = path.join(__dirname, 'bin/osx/exiftool');
+    var pathDelim = "/";
 }
 
+class Asset {
+    constructor(source, destination) {
+        updateStatus("Adding new Asset, source: " + source + ", destination: " + destination);
+        this.source = source;
+        this.destination = destination;
+        // this.sync();
+    }
 
-
-function syncMetadata(source, destination) {
-    if ((fs.existsSync(source)) && (fs.existsSync(destination))) {
-        const ls = spawnSync(exifPath, ["-tagsfromfile", source, "-exif:all", destination]);
-        console.log(ls.output.toString());
-
+    sync() {
+        if ((fs.existsSync(this.source)) && (fs.existsSync(this.destination))) {
+            updateStatus("Syncing " + this.source + " to " + this.destination);
+            const ls = spawnSync(exifPath, ["-tagsfromfile", this.source, "-exif:all", this.destination]);
+            console.log(ls.output.toString());
     }
 }
-
-
-function walk(dir, callback) {
-
-    fs.readdir(dir, function(err, files) {
-        if (err) throw err;
-        files.forEach(function(file) {
-            var filepath = path.join(dir, file);
-            fs.stat(filepath, function(err,stats) {
-                if (stats.isDirectory()) {
-                    walk(filepath, callback);
-                } else if (stats.isFile()) {
-                    callback(filepath, stats);
-                }
-            });
-        });
-    });
 }
 
-// function syncAssets() {
-//     for (asset of assets) {
-//         console.log(asset);
-//     }
-// }
+class AssetCollection {
 
+    constructor(path) {
+        updateStatus("Adding new AssetCollection: " + path);
+        this.path = path;
+        this.paths = [];
+        this.assets = [];
+        this.scan();
 
-function handleFile(path, stats) {
-    // console.log(path, stats);
+        this.dosync = false;
+    }
 
-    // const ls = spawnSync('cat', [path]);
+    scan() {
+        this.paths = walkSync(this.path, { directories: false });
 
-    // console.log(ls.output.toString());
+        for (var index = 0; index < this.paths.length; index++) {
+            var path = this.path + pathDelim + this.paths[index];
+            
+            if (path.endsWith('.DNG')) {
+                var pathTwin = path.substr(0, path.length - 4) + ".JPG";
+                
+                if (fs.existsSync(pathTwin)) {
+                    this.assets.push(new Asset(pathTwin, path));
+                }
+            }
+        }
+    }
 
-    if (path.endsWith('.DNG')) {
-        pathTwin = path.replace('.DNG', '.JPG');
+    add(item) {
+        this.assets.push(item);
+    }
 
-        if (fs.existsSync(pathTwin)) {
-            assets.push({source:pathTwin, destination: path})
-            // syncMetadata(pathTwin, path)
+    sync() {
+
+        for (var index = 0; index < this.assets.length; index++) {
+            if (this.dosync) {
+                this.assets[index].sync();
+            }
+            var percentComplete = (index + 1) / this.assets.length * 100;
+            updateProgress(percentComplete, this.assets[index].destination)
         }
 
+        $("#syncBtn").hide();
+
     }
 
 }
 
+function updateProgress(value, msg) {
+    console.log('progress: ', value);
+    if (value < 100) { 
+        $("#progress")
+              .css("width", value + "%")
+              .attr("aria-valuenow", value)
+              .text(msg);
+      } else {
+        $("#progress")
+              .css("width", value + "%")
+              .attr("aria-valuenow", value)
+              .text("Done");        
+      }
 
-const buttons = {
-    source: document.getElementById('chooseSource'),
-};
+}
+
+function resetProgress() {
+    var value = 0;
+    console.log('progress: ', value);
+    $("#progress")
+          .css("width", value + "%")
+          .attr("aria-valuenow", value)
+          .text("Ready.");
+
+}
 
 
-buttons.source.addEventListener('click', () => {
 
-    const directory = dialog.showOpenDialog({
+function updateStatus(msg) {
+    console.log(msg);
+
+    statusDiv = $("#status");
+    old_status = statusDiv.html();
+    statusDiv.html(old_status + msg + '<br>');
+
+    statusDiv.animate({
+      scrollTop: 1000000000
+    }, 500);
+
+}
+
+function clearStatus(msg) {
+    statusDiv = $("#status");
+    old_status = statusDiv.html("");
+}
+
+
+
+function getSource() {
+    const directories = dialog.showOpenDialog({
         properties: ['openDirectory'],
-    })[0];
+    });
 
-    if (directory) {
-        assets = [];
-        walk(directory, handleFile);
-        console.log(assets, assets.length);
-
-        // console.log('assets are populated', assets.length);
-        // // for (let asset of assets) {
-        // //     console.log(asset);
-        // // }
-
-        // assets.forEach(function(item){
-        //     console.log('hello');
-        // });
+    if (directories.length > 0) {
+        resetProgress();
+        thisCollection = new AssetCollection(directories[0]);
         
 
+        $("#syncBtn").show();
     }
+}
 
 
+
+
+document.getElementById('chooseSourceBtn').addEventListener('click', () => {
+    getSource();
 });
+
+
+document.getElementById('syncBtn').addEventListener('click', () => {
+    thisCollection.sync();
+});
+
+
+
+
+
+// getElementById('chooseSourceImg').addEventListener('click', () => {
+//     getSource();
+// });
+
+
+// $('#chooseSourceImg').on({
+//     'mouseover' : function() {
+//       $(this).attr('src','assets/Icon-Mouseover.png');
+//     },
+//     'mousedown' : function() {
+//       $(this).attr('src','assets/Icon-Pressed.png');
+//     },
+//     mouseout : function() {
+//   $(this).attr('src','assets/Icon.png');
+//     }
+//   });
