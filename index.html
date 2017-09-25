@@ -12,6 +12,7 @@
     <!-- Scripts -->
     <script>delete module.exports</script>
     <script src="./vendor/jquery-3.1.1.js"></script>
+    <script src="./vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="./window.js" charset="utf-8"></script>
 
   </head>
@@ -19,35 +20,55 @@
   <body>
 
 
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container">
-    <ul class="nav navbar-nav">
-        <li>
-          <button id="chooseSourceBtn" name="chooseSourceBtn" type="button" class="btn btn-default navbar-btn" aria-label="Choose Folder...">
-              <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Choose Folder...
-          </button>
-        </li>
-        <li>
-          <button id="syncBtn" name="syncBtn" type="button" class="btn btn-default navbar-btn" aria-label="Sync!">
-              <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Sync!
-          </button>
-        </li>
-      </ul>
-  </div>
-</nav>
-
-
-    <!-- Wrap your entire app inside .window -->
+  <nav class="navbar navbar-default navbar-static-top">
     <div class="container">
-        <img id="chooseSourceImg" name="chooseSourceImg" src="assets/icon-Pressed.png" class="center-block" height="450" />
+      <ul class="nav navbar-nav">
+          <li>
+            <button id="chooseSourceBtn" name="chooseSourceBtn" type="button" class="btn btn-default navbar-btn" aria-label="Choose Folder...">
+                <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Choose Folder...
+            </button>
+          </li>
+          <li>
+            <button id="syncBtn" name="syncBtn" type="button" class="btn btn-default navbar-btn" aria-label="Sync!">
+                <span class="glyphicon glyphicon-transfer" aria-hidden="true"></span> Sync!
+            </button>
+          </li>
+        </ul>
 
-        <div id="status"></div>
-
-         <div id="progress-container" class="progress progress-striped active">
-            <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-        </div>
-
+      <!-- <ul class="nav navbar-nav navbar-right">
+          <li>
+            <button id="aboutBtn" name="aboutBtn" type="button" class="btn btn-default navbar-btn" aria-label="Choose Folder...">
+                <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About
+            </button>
+          </li>
+          <li>
+            <button id="helpBtn" name="helpBtn" type="button" class="btn btn-default navbar-btn" aria-label="Choose Folder...">
+                <span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Help
+            </button>
+          </li>
+        </ul> -->
     </div>
+  </nav>
+
+
+
+  <!-- Image Container -->
+  <div id="main-image" class="container">
+    <img id="chooseSourceImg" name="chooseSourceImg" src="assets/icon-Pressed.png" class="center-block" height="450" />
+  </div>
+  <!-- /Image Container -->
+
+
+  <div id="main-progress" class="container">
+    <div id="progress-container" class="progress progress-striped active">
+    <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+  </div>
+
+
+  <div id="main-status" class="container">
+    <div id="status"></div>
+  </div>
+
 
   <script>
       // You can also require other files to run in this process

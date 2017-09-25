@@ -12,6 +12,7 @@
     "walk-sync": "^0.3.2"
   },
   "devDependencies": {
-    "electron": "^1.4.12"
+    "electron": "^1.4.12",
+    "electron-builder": "^19.30.1"
   }
 }

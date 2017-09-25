@@ -32,7 +32,7 @@ class Asset {
     sync() {
         if ((fs.existsSync(this.source)) && (fs.existsSync(this.destination))) {
             updateStatus("Syncing " + this.source + " to " + this.destination);
-            const ls = spawnSync(exifPath, ["-tagsfromfile", this.source, "-exif:all", this.destination]);
+            const ls = spawnSync(exifPath, ["-overwrite_original", "-tagsfromfile", this.source, "-exif:all", this.destination]);
             console.log(ls.output.toString());
     }
 }
@@ -47,7 +47,7 @@ class AssetCollection {
         this.assets = [];
         this.scan();
 
-        this.dosync = false;
+        this.dosync = true;
     }
 
     scan() {
@@ -87,7 +87,6 @@ class AssetCollection {
 }
 
 function updateProgress(value, msg) {
-    console.log('progress: ', value);
     if (value < 100) { 
         $("#progress")
               .css("width", value + "%")
@@ -97,14 +96,12 @@ function updateProgress(value, msg) {
         $("#progress")
               .css("width", value + "%")
               .attr("aria-valuenow", value)
-              .text("Done");        
+              .text("Done. Click Choose Folder... again to pick another image set.");        
       }
-
 }
 
 function resetProgress() {
     var value = 0;
-    console.log('progress: ', value);
     $("#progress")
           .css("width", value + "%")
           .attr("aria-valuenow", value)
@@ -142,8 +139,6 @@ function getSource() {
     if (directories.length > 0) {
         resetProgress();
         thisCollection = new AssetCollection(directories[0]);
-        
-
         $("#syncBtn").show();
     }
 }
@@ -159,8 +154,6 @@ document.getElementById('chooseSourceBtn').addEventListener('click', () => {
 document.getElementById('syncBtn').addEventListener('click', () => {
     thisCollection.sync();
 });
-
-
 
 
 
@@ -180,3 +173,4 @@ document.getElementById('syncBtn').addEventListener('click', () => {
 //   $(this).attr('src','assets/Icon.png');
 //     }
 //   });
+

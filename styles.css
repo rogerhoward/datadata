@@ -2,22 +2,6 @@ html, body, .container-fluid {
   background-color: #ffffff;
 }
 
-.text-input {
-  font-size: 16px;
-}
-
-.hash-output {
-  color: #575B5E;
-  font-size: 16px;
-  letter-spacing: 2px;
-  white-space: pre-wrap;
-}
-
-.hash-heading {
-  color: #575B5E;
-  font-weight: normal;
-}
-
 
 #status {
 	border: 1px dotted #888888;
@@ -34,11 +18,24 @@ html, body, .container-fluid {
   display: none;
 }
 
+.navbar-btn {
+  margin-left: 10px;
+}
+
+
+#main-image{
+  position: fixed;
+  top: 70px;
+  left: 20px;
+}
+
 
 #progress-container {
   margin-top: 20px;
 }
 
-.navbar-btn {
-  margin-left: 10px;
+#main-progress{
+  position: fixed;
+  bottom: 0px;
+  left: 20px;
 }
