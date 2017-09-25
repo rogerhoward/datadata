@@ -10,7 +10,7 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		MbNqobFHiJlh+mOPfqtHc/e9b0Y=
+		fSfzaEe2FCSZFPSAqmj1WN2Zv34=
 		</data>
 		<key>Resources/bin/osx/Changes</key>
 		<data>
@@ -3522,7 +3522,7 @@
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.dylib</key>
 		<data>
-		XQwHgjnJrMuvJLdJnbJs7zrgFeU=
+		tsw5H0guy6Si4keUIepayxjy0q0=
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>
 		<data>
@@ -4063,64 +4063,64 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			1LwXtZ8Z8ZQGNgpHs6f1GfBOH7k=
+			vkK7haHQwmzASgNotuN6IjKL9X8=
 			</data>
 			<key>requirement</key>
-			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/Mantle.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			c+5WzvI7bmrRtA3/tbinEJoPG9A=
+			fU0qvaiwS09uK0KCv+KIB/1HVV0=
 			</data>
 			<key>requirement</key>
-			<string>identifier "org.mantle.Mantle" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "org.mantle.Mantle" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/ReactiveCocoa.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			nsNMwX82TPhy3TD68i4RCZLCNJU=
+			wS8aO6+k3FTvZTGwHpcMUMDFlvg=
 			</data>
 			<key>requirement</key>
-			<string>identifier "org.reactivecocoa.ReactiveCocoa" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "org.reactivecocoa.ReactiveCocoa" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/Squirrel.framework</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Bz8un8uE6ao8aNE74OLgrHnHMZA=
+			FsTFKby9vV2KxMM9uEKhVYaCm8o=
 			</data>
 			<key>requirement</key>
-			<string>identifier "com.github.Squirrel" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "com.github.Squirrel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/datadata Helper EH.app</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			KMG/j/NvrOIWj8krZwvldkhHbG0=
+			y8fWz9VQkcJsdPQwqb4M9f2DAzI=
 			</data>
 			<key>requirement</key>
-			<string>identifier "datadata.helper.EH" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "datadata.helper.EH" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/datadata Helper NP.app</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			AS0DvIi/j/781iEiiIiBYpukaww=
+			pKt2yP56d+NUusbSmPvlD2TTJfs=
 			</data>
 			<key>requirement</key>
-			<string>identifier "datadata.helper.NP" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "datadata.helper.NP" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Frameworks/datadata Helper.app</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zRW6NqIGMFyRT6DfqqcHvHGF7ww=
+			XZ1IwmrHjNaeOszIjD4KIO2kD5Y=
 			</data>
 			<key>requirement</key>
-			<string>identifier "datadata.helper" and anchor apple generic and certificate leaf[subject.CN] = "Mac Developer: Roger Howard (Q6A69S6R2U)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
+			<string>identifier "datadata.helper" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
 		</dict>
 		<key>Resources/app-update.yml</key>
 		<dict>
@@ -4137,11 +4137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			MbNqobFHiJlh+mOPfqtHc/e9b0Y=
+			fSfzaEe2FCSZFPSAqmj1WN2Zv34=
 			</data>
 			<key>hash2</key>
 			<data>
-			k2mHg8cIaEtyHtoo4lnu5cOkOxnmDMyTnWHDIIbn25s=
+			R3SDRDpnbDaycHpngrBGlJUZ0EwGcv3Q0Ryb1U0Zxjc=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/Changes</key>
@@ -13795,11 +13795,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			XQwHgjnJrMuvJLdJnbJs7zrgFeU=
+			tsw5H0guy6Si4keUIepayxjy0q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			ZhVQd4gtU1dh8cXw9tzEE3OHOoCX47DsL+oTm6SeNO0=
+			9h+gnxYPqqQtuPsgkeL5+VeZLrHDegGI9je5dUGsZQ0=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>
