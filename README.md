@@ -1,23 +1,22 @@
-# Hash
+# Datadata
 
-Simple [Electron](http://electron.atom.io) application that shows the hash
-values of entered text using different algorithms.
+Photopair Syncing for cameras, like the Autel X-Star Premium's, which capture DNG and JPEG files simultaneously, but the DNG files have incomplete metadata. Datadata is a simple tool which scans a directory, and all of its subdirectories, for pairs of DNG and JPEG files (photopairs). For each pair, Datadata will copy the EXIF metadata from the JPG to the DNG.
 
-![screenshot](https://cloud.githubusercontent.com/assets/671378/21204178/de96fa12-c20a-11e6-8e94-f5b16e676eee.png)
+![screenshot](https://rogerhoward.github.io/datadata/screenshot.png)
 
-## Getting started
+## Getting started - Mac OSX
 
-- Install [Node LTS](https://nodejs.org)
-- Clone this repository
-- `cd hash`
-- `npm install` to install the application's dependencies
-- `npm start` to start the application
+- [Download](https://github.com/rogerhoward/datadata/raw/master/dist/datadata-0.1.0.dmg) and install the app
+- Launch the app
+- Click _Choose Folder_ and select a directory which contains images (subdirectories are fine too) *
+- Click _Sync!_ to copy metadata from JPG to its paired DNG.
 
-## Going further
+* *Note:* please test this only on files you've backed up, just in case. This app is largely untested, and may eat your files, burn your home, and destroy your crops. You've been warned!
 
-Here are some ideas on how it can be improved using other Electron APIs.
+## Windows - coming soon!
 
-- Make headings links that open to Wikipedia page for algorithm.
-- Support dragging/dropping a file to hash onto the window.
-- Support opening a file via a dialog to hash from the app's menu.
-- Display time taken to compute each hash.
+Once the features stabilize I'll polish up the Windows build and do a second round of testing.
+
+### About Roger
+
+Roger is an independent software engineer and consultant. You may find out a little more, as well as discover contact info for him, on his [biopage](http://rogerhoward.name)
