@@ -11,7 +11,7 @@ Photopair Syncing for cameras, like the Autel X-Star Premium's, which capture DN
 - Click _Choose Folder_ and select a directory which contains images (subdirectories are fine too) *
 - Click _Sync!_ to copy metadata from JPG to its paired DNG.
 
-* *Note:* please test this only on files you've backed up, just in case. This app is largely untested, and may eat your files, burn your home, and destroy your crops. You've been warned!
+*Note:* please test this only on files you've backed up, just in case. This app is largely untested, and may eat your files, burn your home, and destroy your crops. You've been warned!
 
 ## Windows - coming soon!
 
