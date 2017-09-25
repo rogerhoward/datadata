@@ -1,11 +1,11 @@
 {
   "name": "datadata",
-  "version": "1.0.0",
-  "description": "See the various hash values of entered text",
+  "version": "0.1.0",
+  "description": "Copies metadata from JPEGs to DNGs with the same base name.",
   "repository": "rogerhoward/datadata",
-  "main": "app.js",
+  "main": "app/app.js",
   "scripts": {
-    "start": "electron app.js"
+    "start": "electron app/app.js"
   },
   "license": "ISC",
   "dependencies": {
