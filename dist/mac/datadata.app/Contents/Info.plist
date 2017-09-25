@@ -45,6 +45,6 @@
     <key>NSHumanReadableCopyright</key>
     <string>Copyright © 2017 Roger Howard</string>
     <key>AsarIntegrity</key>
-    <string>{"checksums":{"app.asar":"t6g4Kl3hJCoVY3TsM+cbxZysot1IbhTL3+1QJSJz4oaqmyPvfNDPQ/NNhgE0jKbcc25SSDQa6FtAvUVK9OXUqw==","electron.asar":"nvUkrfPU3ZDXayFHRSC39fIgRlJYldemZCY/Q7coEEVu9Cut3nP5YRL7/azYp3lkIxlUNUijIuS7n4UnvJf2gg=="}}</string>
+    <string>{"checksums":{"app.asar":"0gKwP1tdE0Frn13W/8HvBFCxCXBa6PJY6MWPUS99bqHSkCp+/Ki7FsR54MVRQStLUsH/wWt6qmZpUfkI9+6WCA==","electron.asar":"nvUkrfPU3ZDXayFHRSC39fIgRlJYldemZCY/Q7coEEVu9Cut3nP5YRL7/azYp3lkIxlUNUijIuS7n4UnvJf2gg=="}}</string>
   </dict>
 </plist>
