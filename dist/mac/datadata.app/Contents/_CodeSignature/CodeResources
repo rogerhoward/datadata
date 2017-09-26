@@ -10,7 +10,7 @@
 		</data>
 		<key>Resources/app.asar</key>
 		<data>
-		fSfzaEe2FCSZFPSAqmj1WN2Zv34=
+		JvfIlbz29yacoTiWcobfJ9oDN98=
 		</data>
 		<key>Resources/bin/osx/Changes</key>
 		<data>
@@ -3522,7 +3522,7 @@
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.dylib</key>
 		<data>
-		tsw5H0guy6Si4keUIepayxjy0q0=
+		P/PbJptg8PXw/e9kJ+uYyWc5r6g=
 		</data>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>
 		<data>
@@ -4063,7 +4063,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			vkK7haHQwmzASgNotuN6IjKL9X8=
+			ctatlthh/WwswpWkHVHM/FMNhSQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.electron.framework" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
@@ -4090,7 +4090,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			FsTFKby9vV2KxMM9uEKhVYaCm8o=
+			k1cYynqfc+j2SIsyWIJvKqdIU/8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.github.Squirrel" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = LEYWD4P7TT</string>
@@ -4137,11 +4137,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fSfzaEe2FCSZFPSAqmj1WN2Zv34=
+			JvfIlbz29yacoTiWcobfJ9oDN98=
 			</data>
 			<key>hash2</key>
 			<data>
-			R3SDRDpnbDaycHpngrBGlJUZ0EwGcv3Q0Ryb1U0Zxjc=
+			AHL9dZzEWBLgQZUU7f5oUE9izVYiH5T6POh1jQ9IfOo=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/Changes</key>
@@ -13795,11 +13795,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			tsw5H0guy6Si4keUIepayxjy0q0=
+			P/PbJptg8PXw/e9kJ+uYyWc5r6g=
 			</data>
 			<key>hash2</key>
 			<data>
-			9h+gnxYPqqQtuPsgkeL5+VeZLrHDegGI9je5dUGsZQ0=
+			3Sb62Nh6YX4+sxCYwm8C5YvFIPaDTDz+4ZaXcE9Rzs8=
 			</data>
 		</dict>
 		<key>Resources/bin/osx/t/images/EXE.elf</key>

@@ -2,7 +2,7 @@
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
 
-const { ipcRenderer, remote, shell } = require('electron');
+const { ipcRenderer, remote, shell} = require('electron');
 const { dialog } = remote;
 const { spawn, spawnSync } = require('child_process');
 
@@ -11,14 +11,18 @@ var fs = require("fs"),
     os = require("os"),
     walkSync = require('walk-sync');
 
+
 var thisCollection;
+
+console.log(window.process.resourcesPath);
 
 
 if (os.platform() === 'win32') {
-    var exifPath = path.join(__dirname, 'bin/win32/exiftool.exe');
+    var exifPath = path.join(__dirname, '../bin/win32/exiftool.exe');
     var pathDelim = "\\";
 } else {
-    var exifPath = path.join(__dirname, '../../bin/osx/exiftool');
+    // var exifPath = path.join(__dirname, '../bin/osx/exiftool');
+    var exifPath = path.join(window.process.resourcesPath, '/bin/osx/exiftool');
     var pathDelim = "/";
 }
 
